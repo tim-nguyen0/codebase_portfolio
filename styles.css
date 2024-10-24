@@ -16,6 +16,7 @@
     --dark-button-color-accent: var(--Grayy);
     --dark-button-shadow-color: rgba(0, 0, 0, 0.2);
     --dark-button-shadow-color-anim: rgba(0, 0, 0, 0.05);
+    z-index:10;
 }
 
 body.dark-mode {
@@ -27,6 +28,8 @@ body.dark-mode {
     --dark-button-color-accent: #c2519d;
     --dark-button-shadow-color: rgba(220, 159, 255, 0.3);
     --dark-button-shadow-color-anim: rgba(220, 159, 255, 0.03);
+    overflow-x: hidden;
+    width: 100%;
 }
 
 html,
@@ -128,13 +131,13 @@ nav {
 #dark-mode-toggle {
     display: flex;
     min-width: 100px;
-    width: calc(8vw);
-    height: 75px;
-    padding: 20px 20px;
+    width: fit-content;
+    height: fit-content;
+    padding: calc(1.8vh) calc(1.5vw);
     justify-content: center;
     align-items: center;
     gap: 10px;
-    border-radius: 20px;
+    border-radius: calc(1.3vw);
     background: var(--dark-button-color);
 
     color: var(--NotWhite);
@@ -195,35 +198,51 @@ nav {
 #intro {
     display: flex;
     height: 1275px;
-    min-height: calc(65vh);
-    max-height: calc(81vh);
+    min-height: calc(85vh);
+    max-height: calc(90vh);
     padding: calc(5vh) calc(0.5vw);
     align-items: flex-start;
     gap: 10px;
     align-self: stretch;
+    position: relative;
+    z-index:0;
+    overflow:hidden;
+}
+
+#intro-paralax-box{
+    max-width: 40%;
+    min-width: 35%;
+    display:flex;
+    height: 100%;
 }
 
 #intro-text {
-    display: flex;
     padding: 10px;
     align-items: center;
     gap: 10px;
     flex: 1 0 0;
     align-self: stretch;
+    max-width: 40%;
+    min-width: 35%;
+    position:fixed;
+    z-index: 0;
 }
 
 #intro-large-text {
     flex: 1 0 0;
     color: var(--major-text);
     font-family: Poppins;
-    font-size: 115px;
+    font-size: calc(6vw);
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     letter-spacing: -5.75px;
+    display: fixed;
+    z-index: 0;
 }
 
 #intro-image {
+    height: calc(3wv);
     display: flex;
     padding: 10px;
     align-items: center;
@@ -250,7 +269,7 @@ nav {
 
 #intro-image-object {
     display: flex;
-    width: 633px;
+    width: calc(25vw);
     flex-direction: column;
     align-items: center;
     gap: 10px;
@@ -307,15 +326,16 @@ nav {
 }
 
 #about-me {
+    z-index:10;
+    overflow: hidden;
     display: flex;
-    height: 1400px;
-    width: 100%;
-    min-height: 1400px;
-    max-height: 1400px;
-    padding: 100px;
+    height: fit-content;
+    width: calc(100% - calc(5vw));
+    padding: calc(10vw) 0px calc(10vw) calc(5vw);
     align-items: flex-start;
     align-self: stretch;
     background: var(--Midnight, #181818);
+    position: relative;
 }
 
 footer {
@@ -343,7 +363,7 @@ footer {
 
 .about-content {
     display: flex;
-    padding: 10px;
+    padding: 0px;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
@@ -353,7 +373,7 @@ footer {
 
 .about-image {
     display: flex;
-    padding: 0px 150px;
+    padding: 0px calc(10vw);
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -373,7 +393,35 @@ footer {
 }
 
 .about-image-object {
-    width: 1476px;
-    height: 978px;
+    height: calc(45vw);
 
+}
+
+h2 {
+    color: var(--Not-Quite-White, #F9F9F9);
+    font-family: Poppins;
+    font-size: calc(20vh);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 109.375% */
+    letter-spacing: -6.4px;
+    margin: 0;
+
+}
+
+#about-me-head-box {
+    display: flex;
+    align-items: center;
+    min-width: calc(30vw);
+    width: 100%;
+    gap: 10px;
+    align-self: stretch;
+}
+
+#divider-h2{
+    min-width: calc(40vw);
+    background-color: var(--NotWhite);
+    min-height: calc(5vw);
+    width: 40px;
+    height: 10px;
 }
