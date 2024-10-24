@@ -73,7 +73,7 @@ button {
 
 .logo {
     display: flex;
-    padding: 0px 10px;
+    padding: 0px 5px;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -87,8 +87,8 @@ button {
     font-style: normal;
     font-weight: 800;
     line-height: normal;
-    letter-spacing: -2.75px;
-    padding: 30px;
+    letter-spacing: -2.3px;
+    padding: 15px;
 }
 
 header {
@@ -120,7 +120,7 @@ header a {
 
 nav {
     display: flex;
-    padding: 40px;
+    padding: 25px;
     justify-content: flex-end;
     align-items: center;
     gap: 50px;
@@ -187,7 +187,7 @@ nav {
 .navlink {
     color: var(--header-text);
     font-family: Poppins;
-    font-size: calc(1.3vw);
+    font-size: calc(1.6vw);
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -341,9 +341,9 @@ nav {
 footer {
     display: flex;
     height: 150px;
-    min-height: 150px;
+    min-height: min(150px, calc);
     max-height: 150px;
-    padding: 50px;
+    padding: calc(2vh);
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -363,7 +363,8 @@ footer {
 
 .about-content {
     display: flex;
-    padding: 0px;
+    min-width: calc(40vw);
+    padding: 0 calc(3vw) 0 0;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
@@ -373,7 +374,7 @@ footer {
 
 .about-image {
     display: flex;
-    padding: 0px calc(10vw);
+    padding: 0px calc(3vw);
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -383,7 +384,7 @@ footer {
 
 .justified-right-img {
     display: flex;
-    padding: 0px 150px;
+    padding: 0px calc(3vw);
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -400,7 +401,7 @@ footer {
 h2 {
     color: var(--Not-Quite-White, #F9F9F9);
     font-family: Poppins;
-    font-size: calc(20vh);
+    font-size: calc(8vw);
     font-style: normal;
     font-weight: 600;
     line-height: 100%; /* 109.375% */
@@ -412,7 +413,7 @@ h2 {
 #about-me-head-box {
     display: flex;
     align-items: center;
-    min-width: calc(30vw);
+    min-width: calc(40vw);
     width: 100%;
     gap: 10px;
     align-self: stretch;
@@ -424,4 +425,17 @@ h2 {
     min-height: calc(5vw);
     width: 40px;
     height: 10px;
+}
+
+.about-text {
+    color: var(--Not-Quite-White, #F9F9F9);
+    font-family: Poppins;
+    font-size: calc(2.7vh);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+hr.solid {
+    border-top: 3px solid var(--NotWhite);
 }
