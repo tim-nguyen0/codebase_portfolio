@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleButton = document.getElementById('dark-mode-toggle');
     const body = document.body;
 
-    // Check for saved preference in localStorage
+    // Check for browser pref
     if (localStorage.getItem('theme') === 'dark') {
         body.classList.add('dark-mode');
     }
@@ -12,8 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Save the user's preference
         if (body.classList.contains('dark-mode')) {
+            toggleButton.textContent = 'Light Mode';
             localStorage.setItem('theme', 'dark');
         } else {
+            toggleButton.textContent = 'Dark Mode';
             localStorage.setItem('theme', 'light');
         }
     });
