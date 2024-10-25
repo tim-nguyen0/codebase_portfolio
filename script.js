@@ -1,22 +1,65 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const toggleButton = document.getElementById('dark-mode-toggle');
-    const body = document.body;
+var darkOn = false;
 
-    // Check for browser pref
-    if (localStorage.getItem('theme') === 'dark') {
-        body.classList.add('dark-mode');
+
+document.addEventListener("DOMContentLoaded", function() {
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            addDarkModeListener()
+            if (document.body.id === 'landing') {
+                addScrollListener(); //landing page scroll behavior
+            }
+            applySavedDarkMode();
+        })
+        .catch(error => console.error('Error loading header:', error));
+
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading header:', error));
+});
+
+function addDarkModeListener() {
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', function() {
+            document.documentElement.classList.toggle('dark-mode');
+            
+            if (document.documentElement.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    } else {
+        console.error("Dark mode toggle button not found!");
     }
+}
 
-    toggleButton.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
+function applySavedDarkMode() {
+    const darkMode = localStorage.getItem('darkMode');
+    if (darkMode === 'enabled') {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
+    }
+}
 
-        // Save the user's preference
-        if (body.classList.contains('dark-mode')) {
-            toggleButton.textContent = 'Light Mode';
-            localStorage.setItem('theme', 'dark');
+function addScrollListener() {
+    const header = document.querySelector('header'); 
+
+    header.style.opacity = '0';
+    header.style.transition = 'opacity 0.5s ease';
+
+    window.addEventListener('scroll', function() {
+        // check scroll pos
+        if (window.scrollY > 250) { 
+            header.style.opacity = '1'; // show header
         } else {
-            toggleButton.textContent = 'Dark Mode';
-            localStorage.setItem('theme', 'light');
+            header.style.opacity = '0'; // hide header
         }
     });
-});
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website Projects Display</title>
+    <script>
+        (function() {
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div id="header-container"></div>
+
+    <section class="project">
+        <div class="pinfo">
+            <a class="pname">Project 1</a>
+            <span class="pdate">January 202X</span>
+            <p class="pdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. </p>
+
+        </div>
+        <div class="pimage">
+            <img src="/resources/stuffed_animals.jpg" alt="stuffed_animals" class="pimage-obj">
+        </div>
+    </section>
+
+    <section class="project midnight">
+        <div class="pinfo midnight">
+            <a class="pname midnight">Project 2</a>
+            <span class="pdate">February 202X</span>
+            <p class="pdesc midnight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. </p>
+
+        </div>
+        <div class="pimage">
+            <img src="/resources/stuffed_animals.jpg" alt="stuffed_animals" class="pimage-obj">
+        </div>
+    </section>
+
+    <section class="project">
+        <div class="pinfo">
+            <a class="pname">Project 3</a>
+            <span class="pdate">March 202X</span>
+            <p class="pdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. </p>
+
+        </div>
+        <div class="pimage">
+            <img src="/resources/stuffed_animals.jpg" alt="stuffed_animals" class="pimage-obj">
+        </div>
+    </section>
+    <!-- Footer -->
+    <div id="footer-container"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>

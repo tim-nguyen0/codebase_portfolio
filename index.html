@@ -4,41 +4,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Website</title>
-  <link rel="stylesheet" href="styles.css"> <!-- remember to add css file -->
+  <title>Portfolio Website Home Page</title>
+  <link rel="stylesheet" href="styles.css"> 
+  <script>
+    (function() {
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    })();
+</script>
+  
 </head>
 
-<body>
+<body id="landing">
   <!-- Navigation Bar -->
-  <header>
-    <div class="logo">
-      <a href="#Portfolio Website">Tim Nguyen</a>
-    </div class>
-    <nav>
-      <a href="#project-display" class="navlink">Project Display</a>
-      <a href="#about-me" class="navlink">About Me</a>
-      <a href="#contact-me" class="navlink">Contact Me</a>
-      <button id="dark-mode-toggle">Dark Mode</button>
-    </nav>
-  </header>
-
-  <div class="spacer"></div>
-
+  <div id="header-container"></div>
+  
   <!-- Main Introduction Section -->
   <section id="intro">
     <div id="intro-parallax-container">
       <div id="intro-parallax-box"><span></span></div>
       <div id="intro-text">
-        <p id="intro-large-text">Hi, I'm <span style="color:#f71184;">Tim</span>. This is my portfolio website project
+        <p id="intro-large-text">Hi, I'm <span style="color:#f71184;">Tim</span>. This is my website project 
           for
-          Codebase.</p>
+          The Codebase.</p>
       </div>
     </div>
 
     <div id="intro-image">
       <div class="intro-centering-div"></div>
       <div id="intro-image-object">
-        <!-- You can place an SVG or an image here -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280.01 289.29">
           <defs>
             <style>
@@ -100,11 +95,8 @@
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p class="copyright-footer">&copy; 2024 Copyright, Something Something</p>
-  </footer>
-
-  <script src="script.js"></script> <!-- Link to your JavaScript file -->
+  <div id="footer-container"></div>
+  <script src="script.js"></script>
 </body>
 
 </html>
