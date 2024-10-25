@@ -20,20 +20,19 @@
     <div id="header-container"></div>
 
     <section class="contact">
-        <div class="cform">
-            <form action="https://api.web3forms.com/submit" method="POST">
+        <div class="cleft">
+            <form class="cform" action="https://api.web3forms.com/submit" method="POST">
 
-                <input type="hidden" name="access_key" value="PLACEHOLDER">
+                <span class="cform-title">Send a Message</span>
 
-                <label for="name">Name</label>
-                <input type="text" name="name" required>
+                <input class="cfield" type="hidden" name="access_key" value="bb900600-9064-4524-ad0a-add82fe8ecca">
 
-                <label for="email">Email</label>
-                <input type="text" name="email" required>
+                <input class="cfield" placeholder="Name" type="text" name="name" required>
+
+                <input type="text" class="cfield" placeholder="Email" name="email" required>
                 
-                <label for="email">Message</label>
-                <textarea name="message" required></textarea>
-                <button type="submit">Submit Form</button>
+                <textarea class="cfield cmessage" placeholder="Message" name="message" required></textarea>
+                <button class ="cbutton" type="submit">Submit Form</button>
 
             </form>
         </div>

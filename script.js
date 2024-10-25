@@ -30,8 +30,10 @@ function addDarkModeListener() {
             
             if (document.documentElement.classList.contains('dark-mode')) {
                 localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.textContent = "Light Mode";
             } else {
-                localStorage.setItem('darkMode', 'disabled');
+                localStorage.setItem('darkMode', 'disabled')
+                darkModeToggle.textContent = "Dark Mode";
             }
         });
     } else {
@@ -62,4 +64,19 @@ function addScrollListener() {
             header.style.opacity = '0'; // hide header
         }
     });
+
+    header.addEventListener('mouseenter', function() {
+        header.style.opacity = '1';
+    });
+
+    header.addEventListener('mouseleave', function() {
+        if(window.scrollY < 250) {
+            header.style.opacity = '0';
+        }
+    });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const fadeInElement = document.getElementById('intro-image-object');
+    fadeInElement.style.opacity = '1';
+});

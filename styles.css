@@ -386,6 +386,8 @@ button:hover {
     gap: 10px;
     transform: translate(5vh);
     filter: drop-shadow(0px 4px 200px rgba(220, 159, 255, 0.4));
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
 }
 
 #silly-text {
@@ -645,22 +647,127 @@ hr.solid {
 
 .contact{
     display: flex;
-    height: calc(75vh);
+    min-height: calc(75vh);
     padding: 100px 25px;
     align-items: flex-start;
     gap: 10px;
     align-self: stretch;
     flex-wrap: wrap;
 }
-.cform{
+.cleft{
     display: flex;
-    padding: 10px;
+    padding: calc(13vh) calc(10vh);
     justify-content: center;
     align-items: center;
     gap: 10px;
     flex: 1 0 0;
     align-self: stretch;
 }
+
+.cform{
+
+    display: flex;
+    width: calc(40vh);
+    height: calc(30vw);
+    padding: 8% 5%;
+    flex-direction: column;
+    align-items: center;
+    gap: 5%;
+    border-radius: calc(5vw);
+    background-color: var(--NotWhite);
+    filter: drop-shadow(0px 4px 200px rgba(220, 159, 255, 0.2));
+    box-shadow: 0px 4px 200px 0px rgba(247, 17, 132, 0.2);
+}
+
+.cform-title {
+    color: var(--Not-Quite-Black);
+    font-family: Poppins;
+    font-size: calc(2.3vw);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -2.4px;
+}
+.cfield {
+    outline: none;
+    border: none;
+    border-radius: calc(1.2vw);
+    background: #F6F6F6;
+    display: flex;
+    width: auto;
+    min-height: calc(5vh);
+    height: 13%;
+    padding: 0px 5%;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    align-self: stretch;
+    color: #A1A1A1;
+    font-family: Poppins;
+    font-size: calc(1.1vw);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.2px;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
+}
+
+.cbutton {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    padding: 5% 5%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    background: var(--Accent1);
+    box-shadow: 0px 4px 4px 0px var(--button- shadow-color-pink);
+    color: #FFF;
+    font-family: Poppins;
+    font-size: calc(1.1vw);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -1.4px;
+}
+
+.cbutton:after {
+    border-radius: 20px;
+    position: absolute;
+    content: "";
+    width: 0;
+    height:fit-content;
+    top: 0;
+    left: 0;
+    direction: rtl;
+    z-index: -1;
+    box-shadow:
+        -7px -7px 20px 0px var(--button-shadow-color-anim),
+        -4px -4px 5px 0px var(--button-shadow-color-anim),
+        7px 7px 20px 0px var(--button-shadow-color-anim),
+        2px 0px 7px 6px var(--button-shadow-color-anim);
+    transition: all 0.3s ease;
+}
+.cbutton:hover:after {
+    left: auto;
+    right: 0;
+    width: fit-content;
+}
+
+.cbutton:hover {
+    background-color: var(--button-color-accent);
+    transition: all 0.4s ease;
+}
+
+.cfield.cmessage{
+    padding: 3% 5%;
+    height: auto;
+    align-self: stretch;
+    flex-grow: 1;
+    resize:none;
+}
+
 
 .ctext{
     display: flex;
@@ -681,6 +788,7 @@ hr.solid {
     font-weight: 600;
     line-height: normal;
     letter-spacing: -5.75px;
+
 }
 
 .ctextra{
